@@ -1,0 +1,133 @@
+.bigContainer{
+    min-height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8d8d8d;
+}
+.whitebg{
+    background-color: white;
+    /* border: 7px solid rgb(202, 146, 25); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+.drum-container{
+    display: grid;
+    width:100%;
+}
+.bothButtons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+.button{
+    width:97%;
+    height:100px;
+    margin: 2px;
+}
+#display{
+    width:90%;
+    min-height:40px;
+    background-color: #8d8d8d;
+    text-align: center;
+    font-size: 30px;
+}
+#display h4{
+    text-align: center;
+}
+.drumControls{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+}
+.switch{
+    position: relative;
+    display:inline-block;
+    height:34px;
+    width:60px;
+}
+.switch input{
+    opacity: 0;
+    width:0;
+    height:0px;
+}
+/*This is for the toggle switch*/
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    background-color: #ccc;
+    transition: .4s;
+ 
+}
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width:26px;
+    left:4px;
+    bottom: 4px;
+    background-color: blue;
+    transition: .4s;
+}
+input:checked + .slider{
+    background-color: black;
+}
+input.focus + .slider{
+    box-shadow: 0 0 1px black;
+}
+input:checked + .slider:before{
+    transform: translateX(26px);
+}
+
+/*This is for slider */
+
+.slideContainer{
+    width: 75%;
+}
+.slide{
+    appearance: none;
+    width: 100%;
+    height:5px;
+    background-color: rgb(83, 80, 80);
+    outline: none;
+    opacity: 1;
+    transition: opacity .2s;
+}
+.slide:hover{
+    opacity: 1;
+}
+.slide::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height:25px;
+    background-color: blue;
+    cursor: pointer;
+}
+.slide::-moz-range-thumb{
+    width: 10px;
+    height:25px;
+    background-color: blue;
+    cursor: pointer;
+}
+@media only screen and (min-width:769px) {
+    .whitebg{
+        border: 7px solid rgb(202, 146, 25);
+        flex-direction: row;
+        width:75%;
+    }
+    .drum-container{
+        width:50%;
+        margin: 0;
+    }
+}
